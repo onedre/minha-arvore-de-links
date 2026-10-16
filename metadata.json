@@ -1,0 +1,6 @@
+{
+  "name": "Nutri André Santos - Hub Oficial de Links",
+  "description": "Página oficial de links e recursos do Nutri André Santos: E-books de fitoterapia, site clínico, calculadora NutriCalc Pro e redes sociais.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

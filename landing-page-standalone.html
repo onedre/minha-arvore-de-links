@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Nutri André Santos | Nutrição Clínica & Longevidade</title>
+  <meta name="description" content="Nutricionista especializado em diabetes e gerontologia. Consultas online, guias práticos e tecnologia aplicada à nutrição.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#070b12',
+              card: '#0f172a',
+              accent: '#10b981',
+              accentHover: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #070b12;
+      color: #f1f5f9;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#070b12] text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Ambient Glow Backgrounds (Estilo Aceternity / Minimal Gallery) -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-gradient-to-b from-emerald-500/15 via-teal-500/10 to-transparent blur-[120px] rounded-full"></div>
+    <div class="absolute top-[40%] -right-48 w-[400px] h-[400px] bg-emerald-600/10 blur-[130px] rounded-full"></div>
+    <div class="absolute bottom-[20%] -left-48 w-[400px] h-[400px] bg-teal-600/10 blur-[130px] rounded-full"></div>
+  </div>
+
+  <!-- Top Navigation -->
+  <nav class="sticky top-0 z-40 bg-[#070b12]/80 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="https://ugc.production.linktr.ee/732e0cbe-474c-460c-a72f-ecff0753144b_avann.png" alt="O Nutri André Santos" class="w-9 h-9 rounded-full object-cover border border-emerald-500/40">
+        <div>
+          <span class="font-bold text-sm text-white block leading-tight">O Nutri André Santos</span>
+          <span class="text-[10px] font-mono text-slate-400">CRN-7 21130/P</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#recursos" class="hover:text-emerald-400 transition-colors">Recursos</a>
+        <a href="#bento" class="hover:text-emerald-400 transition-colors">Especialidades</a>
+        <a href="#depoimentos" class="hover:text-emerald-400 transition-colors">Depoimentos</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors">FAQ</a>
+      </div>
+
+      <a href="https://api.whatsapp.com/send?phone=5592981850316&text=Ol%C3%A1%20Nutri%20Andr%C3%A9%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20e%20consultoria." target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-[#070b12] font-semibold text-xs transition-all shadow-lg shadow-emerald-500/20">
+        Agendar Consulta
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- HERO SECTION -->
+    <section class="pt-12 sm:pt-20 pb-16 text-center flex flex-col items-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-semibold mb-6">
+        <span>✦ Nutrição Clínica Amplificada pela Tecnologia</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.15] mb-5 text-balance">
+        Nutrição de precisão para <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500">diabetes, maturidade e longevidade.</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mb-8 leading-relaxed text-balance">
+        Web Developer e Nutricionista especializado em diabetes e gerontologia. Explore meu recurso tech de nutrição e guias para terceira idade, e marque uma consulta.
+      </p>
+
+      <div class="w-full sm:w-auto flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
+        <a href="https://api.whatsapp.com/send?phone=5592981850316&text=Ol%C3%A1%20Nutri%20Andr%C3%A9%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 active:scale-95 text-[#070b12] font-bold text-sm shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all">
+          <span>Marcar Consulta no WhatsApp</span>
+          <span>→</span>
+        </a>
+
+        <a href="#bento" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-all flex items-center justify-center gap-2">
+          <span>Explorar E-books & Apps</span>
+        </a>
+      </div>
+
+      <div class="w-full max-w-xl py-3 px-4 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm grid grid-cols-3 gap-2 text-center">
+        <div>
+          <span class="block text-emerald-400 font-extrabold text-sm sm:text-base font-mono">CRN-7</span>
+          <span class="text-[11px] text-slate-400">21130/P Oficial</span>
+        </div>
+        <div class="border-x border-slate-800">
+          <span class="block text-emerald-400 font-extrabold text-sm sm:text-base font-mono">100%</span>
+          <span class="text-[11px] text-slate-400">Baseado em Evidências</span>
+        </div>
+        <div>
+          <span class="block text-emerald-400 font-extrabold text-sm sm:text-base font-mono">Longevidade</span>
+          <span class="text-[11px] text-slate-400">Gerontologia & Tech</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO GRID SECTION -->
+    <section id="bento" class="py-12">
+      <div class="flex flex-col items-center text-center mb-10">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2 font-semibold">Ecossistema Clínico & Digital</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Recursos, Ferramentas & Atendimento</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Bento 1: E-book Hotmart (7 cols) -->
+        <div class="md:col-span-7 rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-slate-900/90 to-slate-950 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden shadow-xl shadow-emerald-500/5 active:scale-[0.99] transition-transform">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-[#070b12] uppercase tracking-wide">Mais Procurado</span>
+              <span class="text-xs font-mono text-slate-400">Guia Prático Oficial</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">Fitoterápicos Seguros na 3ª Idade</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Descubra como integrar a fitoterapia de forma segura ao tratamento médico na maturidade. Orientações claras sobre dosagens, interações medicamentosas e plantas com eficácia comprovada.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 text-xs text-slate-300 font-medium">
+              <div>✓ Segurança com medicamentos</div>
+              <div>✓ Linguagem acessível e prática</div>
+              <div>✓ Especial para cuidadores</div>
+              <div>✓ Acesso imediato no Hotmart</div>
+            </div>
+          </div>
+          <a href="https://go.hotmart.com/I108026580U" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#070b12] font-bold text-xs flex items-center justify-center gap-2 transition-all">
+            <span>Garantir Meu E-book na Hotmart ↗</span>
+          </a>
+        </div>
+
+        <!-- Bento 2: NutriCalc Pro (5 cols) -->
+        <div class="md:col-span-5 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-7 flex flex-col justify-between active:scale-[0.99] transition-transform">
+          <div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20 inline-block mb-3">Ferramenta Digital</span>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">NutriCalc Pro</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Calculadora nutricional e gerador de fichas de avaliação clínica desenvolvido para profissionais e estudantes.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 font-mono text-[11px] text-slate-400 mb-6">
+              <div class="flex justify-between"><span>Equações:</span><span class="text-emerald-400">Harris-B., Mifflin, DRI</span></div>
+              <div class="flex justify-between"><span>Aplicação:</span><span class="text-white">Gerontologia & Clínica</span></div>
+            </div>
+          </div>
+          <a href="https://calc-pro-nutri-dre.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+            <span>Acessar NutriCalc Pro ↗</span>
+          </a>
+        </div>
+
+        <!-- Bento 3: Site Clínico (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between active:scale-[0.99] transition-transform">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">Consultoria & Manejo Clínico</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Controle da glicose, hemoglobina glicada e prevenção de perdas musculares em idosos com plano sustentável.
+            </p>
+          </div>
+          <a href="https://nutri-andre-s.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+            <span>Conhecer Site Clínico ↗</span>
+          </a>
+        </div>
+
+        <!-- Bento 4: Instagram (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between active:scale-[0.99] transition-transform">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">Instagram Oficial</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Casos de consultório, desmistificação de dietas e ciência explicada para quem quer viver bem.
+            </p>
+          </div>
+          <a href="https://www.instagram.com/dre.sant0" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+            <span>Acompanhar no Instagram ↗</span>
+          </a>
+        </div>
+
+        <!-- Bento 5: TikTok (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 flex flex-col justify-between active:scale-[0.99] transition-transform">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white mb-1.5">Vídeos no TikTok</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Vídeos curtos e explicativos com dicas práticas sobre alimentação, longevidade e saúde metabólica.
+            </p>
+          </div>
+          <a href="https://www.tiktok.com/@onutri.andre" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+            <span>Assistir no TikTok ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="depoimentos" class="py-14 border-t border-slate-800/80">
+      <div class="flex flex-col items-center text-center mb-10">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2 font-semibold">Resultados Reais</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">O que dizem os pacientes e leitores</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-4">
+            "O e-book de fitoterápicos tirou todas as minhas dúvidas sobre os chás que minha mãe de 74 anos tomava junto com os remédios da pressão. Material indispensável para qualquer cuidador!"
+          </p>
+          <div class="pt-4 border-t border-slate-800/60">
+            <span class="block text-xs font-bold text-white">Marcos Castro</span>
+            <span class="text-[11px] text-slate-400">Leitor do E-book de Fitoterapia</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-4">
+            "Eu tinha medo de comer carboidrato por conta do diabetes tipo 2. O André me mostrou como ajustar as porções sem sofrimento. Em 3 meses minha glicada caiu de 8.4 para 6.6."
+          </p>
+          <div class="pt-4 border-t border-slate-800/60">
+            <span class="block text-xs font-bold text-white">Silvia Fontes</span>
+            <span class="text-[11px] text-slate-400">Paciente de Manejo Glicêmico</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between">
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed italic mb-4">
+            "Como estudante de nutrição, utilizo o NutriCalc Pro no meu dia a dia. É a calculadora mais limpa e direta que encontrei para cálculo de TMB e distribuição energética."
+          </p>
+          <div class="pt-4 border-t border-slate-800/60">
+            <span class="block text-xs font-bold text-white">Rodrigo Albuquerque</span>
+            <span class="text-[11px] text-slate-400">Usuário do NutriCalc Pro</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION (Accordion via Vanilla JS) -->
+    <section id="faq" class="py-14 border-t border-slate-800/80">
+      <div class="flex flex-col items-center text-center mb-10">
+        <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2 font-semibold">Tire Suas Dúvidas</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="max-w-2xl mx-auto space-y-3">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left font-semibold text-sm sm:text-base text-white hover:text-emerald-400 transition-colors">
+            <span>Como funciona o atendimento e a consultoria nutricional?</span>
+            <span class="faq-icon text-emerald-400 text-lg">▾</span>
+          </button>
+          <div class="faq-body px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/40 pt-3">
+            O acompanhamento é 100% individualizado, focado especialmente em controle glicêmico (Diabetes tipo 1, tipo 2 e pré-diabetes) e nutrição para a terceira idade (prevenção de sarcopenia e longevidade). As consultas são realizadas de forma online e humanizada, com cálculo preciso de metas metabólicas e planejamento alimentar flexível.
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left font-semibold text-sm sm:text-base text-white hover:text-emerald-400 transition-colors">
+            <span>Para quem é indicado o E-book de Fitoterápicos Seguros na 3ª Idade?</span>
+            <span class="faq-icon text-emerald-400 text-lg">▾</span>
+          </button>
+          <div class="faq-body hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/40 pt-3">
+            É indicado para idosos, seus familiares e cuidadores que buscam alternativas naturais com embasamento científico, compreendendo quais plantas medicinais possuem interação com medicamentos de uso contínuo (como anti-hipertensivos e hipoglicemiantes) e quais podem ser utilizadas com total segurança.
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full p-4 sm:p-5 flex items-center justify-between text-left font-semibold text-sm sm:text-base text-white hover:text-emerald-400 transition-colors">
+            <span>O que é a ferramenta NutriCalc Pro?</span>
+            <span class="faq-icon text-emerald-400 text-lg">▾</span>
+          </button>
+          <div class="faq-body hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/40 pt-3">
+            O NutriCalc Pro é uma aplicação web desenvolvida para unir precisão matemática e agilidade clínica, permitindo cálculos de TMB/GER, gasto energético total e avaliação corporal completa para profissionais e estudantes de nutrição.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="my-14 rounded-3xl p-8 sm:p-12 bg-gradient-to-tr from-emerald-950/60 via-slate-900 to-teal-950/40 border border-emerald-500/30 text-center relative overflow-hidden shadow-2xl">
+      <div class="max-w-xl mx-auto space-y-4">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          Pronto para transformar sua saúde com precisão e ciência?
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Agende sua consulta online agora mesmo diretamente pelo WhatsApp e dê o primeiro passo para o equilíbrio metabólico e longevidade.
+        </p>
+        <div class="pt-2">
+          <a href="https://api.whatsapp.com/send?phone=5592981850316&text=Ol%C3%A1%20Nutri%20Andr%C3%A9%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-[#070b12] font-bold text-sm shadow-xl shadow-emerald-500/25 transition-all">
+            <span>Conversar Diretamente no WhatsApp ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t border-slate-800 text-center text-xs text-slate-500 space-y-3">
+      <div class="flex items-center justify-center gap-2">
+        <span class="font-medium text-slate-400">O Nutri André Santos · CRN-7 21130/P</span>
+      </div>
+      <p>© 2026 André Santos. Todos os direitos reservados.</p>
+    </footer>
+
+  </main>
+
+  <!-- Sticky Mobile Bottom CTA -->
+  <div class="sticky bottom-4 w-full flex justify-center pointer-events-none z-30 px-4 md:hidden">
+    <a href="https://api.whatsapp.com/send?phone=5592981850316&text=Ol%C3%A1%20Nutri%20Andr%C3%A9%2C%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="pointer-events-auto w-full max-w-sm h-12 px-6 rounded-full bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-[#070b12] font-bold text-sm shadow-2xl shadow-emerald-500/40 flex items-center justify-center gap-2 transition-all border border-emerald-300/40">
+      <span>Falar no WhatsApp</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <script>
+    function toggleFaq(button) {
+      const container = button.parentElement;
+      const body = container.querySelector('.faq-body');
+      const icon = button.querySelector('.faq-icon');
+      
+      const isHidden = body.classList.contains('hidden');
+      if (isHidden) {
+        body.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        body.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</body>
+</html>
