@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { ExternalLink, Share2, Check, Sparkles, ArrowRight } from 'lucide-react';
+import { ExternalLink, Share2, Check, ArrowRight } from 'lucide-react';
 import { LinkItem } from '../types';
+import { LinkTypeIcon, getLinkKind } from './LinkTypeIcon';
 
 interface LinkCardProps {
   link: LinkItem;
   onLinkClick: (id: string) => void;
   onCopyFeedback?: (text: string) => void;
+  index?: number;
 }
 
-export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFeedback }) => {
+export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFeedback, index }) => {
   const [imgError, setImgError] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -25,6 +27,8 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFee
 
   const isFeatured = link.layout === 'featured';
   const isPulse = link.highlightAnimation === 'pulse';
+  const folio = index ? String(index).padStart(2, '0') : null;
+  const kind = getLinkKind(link);
 
   if (!link.isActive) {
     return null;
@@ -65,13 +69,16 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFee
               />
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white p-6 text-center">
-                <Sparkles className="w-8 h-8 mb-2 text-emerald-300" />
+                <kind.Icon className="w-8 h-8 mb-2 text-emerald-300" />
                 <span className="font-semibold text-lg">{link.title}</span>
               </div>
             )}
 
             {/* Gradient Scrim for perfect mobile legibility */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
+
+            {/* Link Type Icon */}
+            <LinkTypeIcon link={link} className="absolute bottom-3 left-3 z-10 w-9 h-9 ring-2 ring-white/30" iconClassName="w-4.5 h-4.5" />
 
             {/* Living Beacon Badge */}
             {link.badge && (
@@ -120,7 +127,9 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFee
                 <span>Acessar portal</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </span>
-              <span className="text-[11px] font-mono text-slate-400">Oficial</span>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">
+                {folio ? `Nº ${folio} · Oficial` : 'Oficial'}
+              </span>
             </div>
           </div>
         </a>
@@ -151,39 +160,53 @@ export const LinkCard: React.FC<LinkCardProps> = ({ link, onLinkClick, onCopyFee
         onClick={() => onLinkClick(link.id)}
         className="flex items-center justify-between p-3.5 sm:p-4 gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
       >
-        {/* Left Thumbnail or Gradient Fallback */}
-        <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-inner">
-          {!imgError && link.thumbnailUrl ? (
-            <img
-              src={link.thumbnailUrl}
-              alt=""
-              referrerPolicy="no-referrer"
-              onError={() => setImgError(true)}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
+        {/* Left Thumbnail (or brand icon fallback) with Link Type Icon chip */}
+        <div className="relative shrink-0">
+          <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-inner">
+            {!imgError && link.thumbnailUrl ? (
+              <img
+                src={link.thumbnailUrl}
+                alt=""
+                referrerPolicy="no-referrer"
+                onError={() => setImgError(true)}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : (
+              <div className={`w-full h-full flex items-center justify-center ${kind.chip}`}>
+                <kind.Icon className="w-6 h-6" />
+              </div>
+            )}
+          </div>
+          {!imgError && link.thumbnailUrl && (
+            <LinkTypeIcon
+              link={link}
+              className="absolute -bottom-1.5 -right-1.5 w-6 h-6 ring-2 ring-white dark:ring-slate-900"
+              iconClassName="w-3.5 h-3.5"
             />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-emerald-600 to-teal-800 text-white font-bold text-sm">
-              {link.title.substring(0, 2).toUpperCase()}
-            </div>
           )}
         </div>
 
         {/* Middle Content */}
         <div className="flex-1 min-w-0 pr-1">
-          <div className="flex items-center gap-2 mb-0.5">
-            <h2 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors truncate">
-              {link.title}
-            </h2>
-            {link.badge && (
-              <span className="hidden xs:inline-flex items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/15 px-2 py-0.5 rounded-full shrink-0">
-                {isPulse && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                )}
-                <span>{link.badge}</span>
-              </span>
-            )}
-          </div>
+          {/* Editorial Folio Kicker (Nº + badge) */}
+          {(folio || link.badge) && (
+            <div className="flex items-center gap-1.5 mb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 truncate">
+              {folio && <span>{folio}</span>}
+              {folio && link.badge && <span aria-hidden="true" className="h-px w-3 bg-current opacity-60" />}
+              {link.badge && (
+                <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 truncate">
+                  {isPulse && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                  )}
+                  <span className="truncate">{link.badge}</span>
+                </span>
+              )}
+            </div>
+          )}
+          <h2 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors truncate mb-0.5">
+            {link.title}
+          </h2>
 
           {link.subtitle && (
             <p className="text-xs text-slate-500 dark:text-slate-400 truncate">

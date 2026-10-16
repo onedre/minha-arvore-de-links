@@ -66,7 +66,13 @@ export default function App() {
 
         {/* Subtle Ambient Emerald Counter-glow */}
         <div className="absolute top-1/2 left-[-15%] w-[400px] h-[400px] bg-emerald-600/10 dark:bg-emerald-600/15 blur-[100px] rounded-full" />
+
+        {/* Editorial Baseline Grid behind the masthead */}
+        <div className="absolute inset-x-0 top-0 h-[620px] editorial-grid" />
       </div>
+
+      {/* Print-like Film Grain over the whole canvas */}
+      <div aria-hidden="true" className="fixed inset-0 pointer-events-none z-40 editorial-grain" />
 
       {/* Main Content Container */}
       <main className="w-full max-w-xl mx-auto px-3 sm:px-6 flex-1 flex flex-col">
@@ -82,6 +88,13 @@ export default function App() {
 
         {/* Links Feed */}
         <section aria-label="Links oficiais" className="w-full space-y-3.5 my-3 flex-1">
+          {/* Editorial Index Rule */}
+          <div className="flex items-center gap-3 px-1 pt-1 font-mono text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+            <span>Índice</span>
+            <span aria-hidden="true" className="h-px flex-1 bg-slate-300/70 dark:bg-white/10" />
+            <span>{String(activeLinks.length).padStart(2, '0')} {activeLinks.length === 1 ? 'link' : 'links'}</span>
+          </div>
+
           {activeLinks.map((link, index) => (
             <div
               key={link.id}
@@ -90,6 +103,7 @@ export default function App() {
             >
               <LinkCard
                 link={link}
+                index={index + 1}
                 onLinkClick={recordClick}
                 onCopyFeedback={showToast}
               />
@@ -108,6 +122,23 @@ export default function App() {
             </div>
           )}
         </section>
+
+        {/* Editorial Pull-Quote / Manifesto */}
+        <figure className="relative mt-10 mb-2 px-6 text-center animate-reveal" style={{ animationDelay: '800ms' }}>
+          <span
+            aria-hidden="true"
+            className="block font-serif text-6xl leading-none h-8 text-emerald-500/70 dark:text-emerald-400/60 select-none"
+          >
+            “
+          </span>
+          <blockquote className="font-serif italic text-[1.45rem] sm:text-2xl leading-snug text-slate-800 dark:text-slate-100 text-balance">
+            A ciência da nutrição, amplificada pela tecnologia.
+          </blockquote>
+          <figcaption className="mt-3 flex items-center justify-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+            <span aria-hidden="true" className="h-px w-6 bg-emerald-500/60" />
+            <span>André Santos</span>
+          </figcaption>
+        </figure>
 
         {/* Floating WhatsApp CTA with Linear Light Shimmer Sweep */}
         <div className="sticky bottom-6 w-full flex justify-center pointer-events-none z-30 pt-4">

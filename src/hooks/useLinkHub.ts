@@ -30,7 +30,10 @@ export function useLinkHub() {
       if (savedLinks) {
         const parsed = JSON.parse(savedLinks);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed.sort((a, b) => a.order - b.order);
+          // Merge in default links added after this browser saved its copy
+          const savedIds = new Set(parsed.map((l: LinkItem) => l.id));
+          const missing = DEFAULT_LINKS.filter(l => !savedIds.has(l.id));
+          return [...parsed, ...missing].sort((a, b) => a.order - b.order);
         }
       }
     } catch {
