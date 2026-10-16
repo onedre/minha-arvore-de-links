@@ -88,12 +88,23 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Name & Metallic Verified Badge */}
+      {/* Editorial Kicker flanked by hairline rules */}
+      <div
+        aria-hidden="true"
+        className="flex items-center gap-3 mb-2 font-mono text-[10px] uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400 animate-reveal"
+        style={{ animationDelay: '60ms' }}
+      >
+        <span className="h-px w-8 bg-gradient-to-r from-transparent to-slate-400/70 dark:to-slate-500/70" />
+        <span>Diabetes · Gerontologia</span>
+        <span className="h-px w-8 bg-gradient-to-l from-transparent to-slate-400/70 dark:to-slate-500/70" />
+      </div>
+
+      {/* Name (Editorial Serif Masthead) & Metallic Verified Badge */}
       <div
         className="flex items-center gap-2 mb-1.5 px-2 text-center animate-reveal"
         style={{ animationDelay: '100ms' }}
       >
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.05] font-normal tracking-[-0.01em] text-slate-900 dark:text-white">
           {profile.name}
         </h1>
         {profile.verified && (
